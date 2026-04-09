@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  # Next.js Portfolio Application
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_SANITY_PROJECT_ID=${NEXT_PUBLIC_SANITY_PROJECT_ID}
+      - NEXT_PUBLIC_SANITY_DATASET=${NEXT_PUBLIC_SANITY_DATASET}
+      - NEXT_PUBLIC_SANITY_API_VERSION=${NEXT_PUBLIC_SANITY_API_VERSION}
+      - SANITY_API_TOKEN=${SANITY_API_TOKEN}
+    volumes:
+      - /app/node_modules
+      - /app/.next
+    depends_on:
+      - backend
+    networks:
+      - portfolio-network
+    restart: unless-stopped
+
+  # Backend Service (Placeholder)
+  # Replace this with your actual backend service configuration
+  backend:
+    image: node:20-alpine
+    working_dir: /app
+    command: echo "Backend service placeholder - configure as needed"
+    networks:
+      - portfolio-network
+    restart: unless-stopped
+
+networks:
+  portfolio-network:
+    driver: bridge
+
+volumes:
+  node_modules:
+  next_cache:

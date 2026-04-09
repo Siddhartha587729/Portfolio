@@ -1,0 +1,50 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Master Portfolio Hub - A comprehensive Next.js portfolio platform with Sanity CMS integration",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint src --max-warnings 0",
+    "type-check": "tsc --noEmit",
+    "studio": "sanity studio",
+    "sanity": "sanity"
+  },
+  "keywords": [
+    "portfolio",
+    "next.js",
+    "sanity",
+    "typescript",
+    "tailwindcss"
+  ],
+  "author": "Portfolio Developer",
+  "license": "MIT",
+  "dependencies": {
+    "@sanity/client": "^7.20.0",
+    "@sanity/image-url": "^2.1.1",
+    "@types/node": "^25.5.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "next": "^16.2.3",
+    "next-sanity": "^12.2.2",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "sanity": "^5.20.0",
+    "typescript": "^6.0.2"
+  },
+  "devDependencies": {
+    "@sanity/structure": "^2.36.2",
+    "@sanity/vision": "^5.20.0",
+    "@tailwindcss/postcss": "^4.2.2",
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.27",
+    "classnames": "^2.5.1",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.3",
+    "lucide-react": "^1.8.0",
+    "postcss": "^8.5.9",
+    "tailwindcss": "^4.2.2"
+  }
+}
