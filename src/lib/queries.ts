@@ -81,3 +81,31 @@ export const SKILLS_BY_CATEGORY_QUERY = `*[_type == "skill" && category == $cate
   description,
   order,
 }`
+
+export const POSTS_BY_CATEGORY_QUERY = `*[_type == "post" && category == $category] | order(coalesce(publishedAt, _createdAt) desc) {
+  _id,
+  title,
+  slug,
+  excerpt,
+  publishedAt,
+  coverImage,
+  category,
+  rating,
+  author,
+  repositoryUrl,
+}`
+
+export const POST_BY_SLUG_AND_CATEGORY_QUERY = `*[_type == "post" && slug.current == $slug && category == $category][0] {
+  _id,
+  title,
+  slug,
+  excerpt,
+  publishedAt,
+  coverImage,
+  category,
+  rating,
+  author,
+  repositoryUrl,
+  body,
+  gallery,
+}`
